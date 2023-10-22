@@ -5,7 +5,6 @@
 body {
     margin: 0;
     height: 100vh;
-    background-image: url("../public/react.png");
     background-repeat: no-repeat;
     background-position: 100px 100px;
     background-size: 30%;
