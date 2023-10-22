@@ -1,4 +1,2 @@
-# realtime-chat-go-react
+# chat-go-react
 
-### server -> go run main.go
-### client -> npm start
