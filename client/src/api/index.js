@@ -1,4 +1,4 @@
-var socket = new WebSocket("ws://localhost:8080/ws");
+﻿var socket = new WebSocket("ws://chat-3ekb.onrender.com/ws");
 
 let connect = cb => {
     console.log("Connecting");
