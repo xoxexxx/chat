@@ -1,6 +1,12 @@
-﻿FROM golang:1.11.1-alpine3.8
-ADD . /app/
-WORKDIR /app
+FROM golang:1.18
+
+WORKDIR $GOPATH/src
+
+COPY . .
+
 RUN go mod download
-RUN go build -o main ./...
-CMD ["/app/main"]
+RUN go build -o /main
+
+EXPOSE 8080
+
+CMD ["/main"]
