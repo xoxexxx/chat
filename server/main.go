@@ -16,7 +16,7 @@ func serveWs(pool *websocket.Pool, w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Fprintf(w, "%+V\n", err)
 	}
-	
+
 	client := &websocket.Client{
 	Conn: conn,
 	Pool: pool,
@@ -34,16 +34,18 @@ func setupRoutes() {
 	pool := websocket.NewPool()
 	go pool.Start()
 
-	http.HandleFunc("/", func (w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/ws", func (w http.ResponseWriter, r *http.Request) {
+		
 		serveWs(pool, w, r)
 	})
 
-	
+
 }
 
 func main() {
 	fmt.Println("Chat App v0.01")
 	setupRoutes()
 	http.ListenAndServe(":8080", nil)
+	
 
 }
