@@ -1,8 +1,8 @@
 # chat
 
-##clien
+#clien
 ### npm install
 ### npm start
 
-##serve
+#serve
 ### go run main.go
